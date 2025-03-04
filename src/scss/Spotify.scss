@@ -1,0 +1,122 @@
+.spotify-player-container {
+  border: 1px solid var(--border-color-form);
+  margin: 40px;
+
+  .medium & {
+    width: 25rem;
+  }
+
+  .large & {
+    width: 25rem;
+  }
+
+  &__title {
+    font-family: var(--font-family-headers), sans-serif;
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  &__playlist {
+    padding: 12px;
+    align-items: center;
+    &-title {
+      font-family: var(--font-family-headers), sans-serif;
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      scroll-direction: horizontal;
+      width: 85%;
+      overflow-x: auto;
+      align-items: center;
+      &-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        font-family: var(--font-family-headers), sans-serif;
+        height: max-content;
+        text-align: center;
+        &__name {
+          font-size: 1.2rem;
+          padding: 10px;
+          height: 40px;
+        }
+        &__image {
+          width: 180px;
+          height: 180px;
+        }
+      }
+
+      &__button {
+        margin: 20px;
+        border: 2px solid var(--border-color-form);
+        border-radius: 10px;
+        width: 80px;
+        padding: 8px;
+      }
+    }
+  }
+
+  &__current-track {
+    &__title {
+      font-family: var(--font-family-headers), sans-serif;
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+    &__name {
+      font-family: var(--font-family-headers), sans-serif;
+      font-size: 1.1rem;
+      padding: 10px;
+    }
+    &__img {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+    }
+    &__artist {
+      font-family: var(--font-family-headers), sans-serif;
+      font-size: 1rem;
+      padding: 10px;
+    }
+    &__player-controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    &-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    &-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+  }
+
+  &__player-controls {
+    &__button {
+      border: 2px solid var(--border-color-form);
+      border-radius: 1000px;
+      width: 80px;
+      padding: 8px;
+      content: " ";
+    }
+  }
+}
