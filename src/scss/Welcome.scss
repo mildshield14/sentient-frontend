@@ -194,6 +194,10 @@
         align-items: center;
         margin-top: 2.5rem;
 
+        .small & {
+          flex-direction: column;
+        }
+
       }
     }
 

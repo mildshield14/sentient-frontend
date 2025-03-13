@@ -68,7 +68,7 @@ const Welcome: React.FC = () => {
         </div>
       </div>
       <div className="welcome__section welcome__section--3">
-        <div className="welcome-left--3">
+        <div className="welcome__left--3">
           <div className="welcome__title welcome-bold">
             Ready to Supercharge Your Productivity?
           </div>
