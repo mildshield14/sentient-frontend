@@ -6,7 +6,7 @@ const cardData = [
     iconClass: "welcome__card__icon welcome__card__icon--1",
     title: "Mood Detection",
     description:
-      "Simply activate your camera (with privacy control), and Sentium will automatically detect your mood to deliver personalized motivational quotes and keeping you focused and inspired.",
+      "Simply activate your camera (with privacy control), and Sentient will automatically detect your mood to deliver personalized motivational quotes and keeping you focused and inspired.",
   },
   {
     iconClass: "welcome__card__icon welcome__card__icon--2",
@@ -18,7 +18,7 @@ const cardData = [
     iconClass: "welcome__card__icon welcome__card__icon--2",
     title: "Customisable To-Do Lists",
     description:
-      "Create and customize your daily tasks. Sentium helps prioritize them based on your schedule and productivity patterns, ensuring nothing gets missed.",
+      "Create and customize your daily tasks. Sentient helps prioritize them based on your schedule and productivity patterns, ensuring nothing gets missed.",
   },
   {
     iconClass: "welcome__card__icon welcome__card__icon--2",
@@ -32,7 +32,7 @@ const Welcome: React.FC = () => {
   return (
     <div className="welcome">
       <div className="welcome__section welcome__section--1">
-        <div className="welcome__left">
+        <div className="welcome__left--1">
           <h1 className="welcome__title">
             Your personalised path to productivity
           </h1>
@@ -46,26 +46,114 @@ const Welcome: React.FC = () => {
             {/*<Link to="/login" className="btn btn-secondary">Login</Link>*/}
           </div>
         </div>
-        <div className="welcome__right">
+        <div className="welcome__right--1">
           <div className="welcome__image__block"></div>
           <div className="welcome__image"></div>
           {/*    Image hereeeeee */}
         </div>
       </div>
-      <div className="welcome__section">
+      <div className="welcome__section welcome-section--2">
         <h3 className="welcome__title welcome-bold">How it works?</h3>
         <div className="welcome__bar"></div>
         <div className="welcome__cards">
           {cardData.map((card, index) => (
             <div className="welcome__card" key={index}>
               <div className={card.iconClass}></div>
-              <div className="welcome__card__title">{card.title}</div>
+              <div className="welcome__card__title welcome-bold">
+                {card.title}
+              </div>
               <div className="welcome__para">{card.description}</div>
             </div>
           ))}
         </div>
       </div>
-      <div></div>
+      <div className="welcome__section welcome__section--3">
+        <div className="welcome-left--3">
+          <div className="welcome__title welcome-bold">
+            Ready to Supercharge Your Productivity?
+          </div>
+          <div className="welcome__buttons">
+            <Link to="/register" className="btn btn-primary">
+              Try for free
+            </Link>
+          </div>
+        </div>
+
+        <div className="welcome__right--3">
+          <div className="welcome__image-banner"></div>
+        </div>
+      </div>
+      <div className="welcome__section welcome__section--4">
+        <h3 className="welcome__title welcome-bold">About Us</h3>
+        <div className="welcome__bar"></div>
+        <div className="welcome__section--4-content">
+        <div className="welcome__left--4">
+          <div className="welcome__para">
+            <div className="welcome__line">
+              Picture this… you're facing a long day, feeling unfocused and
+              unmotivated.
+            </div>
+            <div className="welcome__line">
+              Tasks are piling up, music feels off, and you can't seem to find
+              your rhythm. We get it, staying productive is tough.
+            </div>
+            <div className="welcome__line">
+              That's why we created Sentient an AI-powered dashboard designed to
+              understand your mood and help you stay inspired and organized,
+              every single day.
+            </div>
+            <div className="welcome__line">
+              Here's what Sentient stands for:
+              <ul className="welcome__list">
+                <li><span>
+                  <span className="welcome-bold">
+                    Personalized Motivation:{" "}
+                  </span>{" "}
+                  analyzes your mood and delivers tailored quotes to keep you
+                  inspired.
+                </span>
+                </li>
+                <li>
+                  <span>
+                  <span className="welcome-bold">Task Clarity: </span> to-do
+                  lists that help you stay focused and productive.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                  <span className="welcome-bold">
+                    Seamless Music Integration:{" "}
+                  </span>{" "}
+                    to Spotify or YouTube and listen to playlists that match your
+                  vibe.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                  <span className="welcome-bold">Smart Scheduling: </span> track
+                  of tasks and events with an integrated calendar.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                  <span className="welcome-bold">Weather Updates: </span> what
+                  to expect for the day ahead.
+                  </span>
+                </li>
+              </ul>
+              <div className="welcome__line">
+                Sentient was created to empower individuals to be their most productive and inspired selves
+                because when your mood and mind are in sync, anything is possible.
+              </div>
+          </div>
+        </div>
+        </div>
+        <div className="welcome__right--4">
+          <div className="logo-image welcome__right--4__logo"></div>
+          <div className="logo-title"></div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };
