@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata:wght@200..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata:wght@200..900&family=Martian+Mono:wght@100..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata:wght@200..900&family=Martian+Mono:wght@100..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
 
 .barlow-thin {
   font-family: "Barlow", serif;
@@ -114,9 +114,9 @@
   --text-color-black: #000;
   --border-color-form: #c1c7c9;
   --background-color: #fff;
-  --primary-color: #CB5A96;
+  --primary-color: #cb5a96;
   --jumbotron-background-color: #f5f5f5;
-  --light-background-color: #F5F6FA;
+  --light-background-color: #f5f6fa;
   --white-color: #fff;
 }
 
@@ -124,17 +124,17 @@ body {
   font-family: "Barlow", serif;
 }
 
-.logo{
-  &-image{
+.logo {
+  &-image {
     //width: 100px;
     //height: 100px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 314 224' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M271.592 111.611C271.592 170.164 220.535 218.223 156.796 218.223C93.0568 218.223 41.9999 170.164 41.9999 111.611C41.9999 53.0589 93.0568 5 156.796 5C220.535 5 271.592 53.0589 271.592 111.611Z' fill='%23F8FCFF' stroke='black' stroke-width='10'/%3E%3Ccircle cx='226.199' cy='106.403' r='31.4597' fill='%23F2D9FF' stroke='black' stroke-width='10'/%3E%3Cellipse cx='225.827' cy='106.403' rx='15.9976' ry='16.3697' fill='black'/%3E%3Ccircle cx='214.294' cy='96.7299' r='4.46446' fill='white'/%3E%3Ccircle cx='226.199' cy='103.427' r='6.69668' fill='white'/%3E%3Ccircle cx='238.476' cy='95.6138' r='3.34834' fill='white'/%3E%3Ccircle cx='87.5403' cy='106.46' r='31.4597' fill='%23F2D9FF' stroke='black' stroke-width='10'/%3E%3Cellipse cx='87.1682' cy='106.46' rx='15.9976' ry='16.3697' fill='black'/%3E%3Ccircle cx='75.635' cy='96.7868' r='4.46446' fill='white'/%3E%3Ccircle cx='87.5402' cy='103.483' r='6.69668' fill='white'/%3E%3Ccircle cx='99.8175' cy='95.6707' r='3.34834' fill='white'/%3E%3Cmask id='path-12-inside-1_83_46' fill='white'%3E%3Cpath d='M180.133 133.19C180.133 139.307 177.702 145.174 173.377 149.5C169.051 153.826 163.184 156.256 157.066 156.256C150.949 156.256 145.082 153.826 140.756 149.5C136.43 145.174 134 139.307 134 133.19L143.11 133.19C143.11 136.891 144.581 140.441 147.198 143.058C149.815 145.675 153.365 147.146 157.066 147.146C160.768 147.146 164.317 145.675 166.935 143.058C169.552 140.441 171.022 136.891 171.022 133.19H180.133Z'/%3E%3C/mask%3E%3Cpath d='M180.133 133.19C180.133 139.307 177.702 145.174 173.377 149.5C169.051 153.826 163.184 156.256 157.066 156.256C150.949 156.256 145.082 153.826 140.756 149.5C136.43 145.174 134 139.307 134 133.19L143.11 133.19C143.11 136.891 144.581 140.441 147.198 143.058C149.815 145.675 153.365 147.146 157.066 147.146C160.768 147.146 164.317 145.675 166.935 143.058C169.552 140.441 171.022 136.891 171.022 133.19H180.133Z' fill='%23D9D9D9' stroke='black' stroke-width='20' stroke-linejoin='round' mask='url(%23path-12-inside-1_83_46)'/%3E%3Cpath d='M157 4V51.6209' stroke='black' stroke-width='10'/%3E%3Ccircle cx='157.417' cy='59.4171' r='8.41706' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cline x1='126' y1='9' x2='126' y2='30.5782' stroke='black' stroke-width='10'/%3E%3Cline x1='191.019' y1='8.92889' x2='191.019' y2='30.5071' stroke='black' stroke-width='10'/%3E%3Ccircle cx='189.739' cy='38.692' r='8.41706' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cline x1='273.82' y1='105.123' x2='295.398' y2='105.123' stroke='black' stroke-width='10'/%3E%3Ccircle cx='303.583' cy='106.403' r='8.41706' transform='rotate(-90 303.583 106.403)' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cpath d='M271.588 122.773L290.562 129.841L297.63 145.095' stroke='black' stroke-width='10'/%3E%3Cpath d='M300.607 141.886C305.255 141.886 309.024 145.655 309.024 150.303C309.024 154.952 305.255 158.72 300.607 158.72C295.958 158.72 292.19 154.952 292.19 150.303C292.19 145.655 295.958 141.886 300.607 141.886Z' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cpath d='M271.588 90.0332L290.562 82.9645L297.63 67.7109' stroke='black' stroke-width='10'/%3E%3Cpath d='M300.607 70.9195C305.255 70.9195 309.024 67.151 309.024 62.5024C309.024 57.8538 305.255 54.0853 300.607 54.0853C295.958 54.0853 292.19 57.8538 292.19 62.5024C292.19 67.151 295.958 70.9195 300.607 70.9195Z' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cline y1='-5' x2='21.5782' y2='-5' transform='matrix(-1 0 0 1 40.1801 110.123)' stroke='black' stroke-width='10'/%3E%3Ccircle cx='10.4171' cy='10.4171' r='8.41706' transform='matrix(0 -1 -1 0 20.8341 116.82)' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cpath d='M42.4124 122.773L23.4384 129.841L16.3697 145.095' stroke='black' stroke-width='10'/%3E%3Cpath d='M13.3934 141.886C8.74475 141.886 4.9763 145.655 4.9763 150.303C4.9763 154.952 8.74475 158.72 13.3934 158.72C18.042 158.72 21.8104 154.952 21.8104 150.303C21.8104 145.655 18.042 141.886 13.3934 141.886Z' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cpath d='M42.4124 90.0332L23.4384 82.9645L16.3697 67.7109' stroke='black' stroke-width='10'/%3E%3Cpath d='M13.3934 70.9195C8.74475 70.9195 4.9763 67.151 4.9763 62.5024C4.9763 57.8538 8.74475 54.0853 13.3934 54.0853C18.042 54.0853 21.8104 57.8538 21.8104 62.5024C21.8104 67.151 18.042 70.9195 13.3934 70.9195Z' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Cpath d='M157.5 222.578V201' stroke='black' stroke-width='10'/%3E%3Ccircle cx='157.417' cy='194.417' r='8.41706' transform='rotate(180 157.417 194.417)' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3Ccircle cx='127.417' cy='38.4171' r='8.41706' fill='%23F2D9FF' stroke='black' stroke-width='4'/%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
   }
-  &-title::after{
+  &-title::after {
     //font-size: 3rem;
     font-weight: 700;
-    font-family:"Martian Mono", serif;
+    font-family: "Martian Mono", serif;
     width: 100%;
     display: inline;
     height: 30px;

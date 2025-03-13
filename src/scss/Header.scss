@@ -35,18 +35,17 @@
     }
   }
 
-
-  &__link{
+  &__link {
     background: none;
     border: none;
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-family: var(--font-family-headers), serif;
     cursor: pointer;
 
-    &-button{
+    &-button {
       background-color: var(--primary-color);
       color: white;
-      padding:0.5rem;
+      padding: 0.5rem;
       border-radius: 5px;
       padding-left: 15px;
       padding-right: 15px;
@@ -71,7 +70,7 @@
         text-decoration: none;
       }
 
-      &-change{
+      &-change {
         background-color: white;
         color: var(--primary-color);
         border: 1px solid var(--primary-color);
@@ -95,9 +94,7 @@
           color: var(--primary-color);
           text-decoration: none;
         }
-
       }
-
     }
   }
 

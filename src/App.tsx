@@ -133,71 +133,63 @@ const AppContent = ({
 
   return (
     <>
+      <div>
+        {/*  <span className="navbar__app-name"><Link to="/">Sentient</Link></span>*/}
+        {/*<div className="navbar__logo"><Link to="/">*/}
+        {/*    /!*<EmotionCycler /></Link>*!/*/}
+        {/*</div>*/}
 
-        <div>
-            {/*  <span className="navbar__app-name"><Link to="/">Sentient</Link></span>*/}
-            {/*<div className="navbar__logo"><Link to="/">*/}
-            {/*    /!*<EmotionCycler /></Link>*!/*/}
-            {/*</div>*/}
+        {/*<Link className="navbar__links-left" to="/">*/}
+        {/*  <div className="logo-image"></div>*/}
+        {/*  <div className="logo-title"></div>*/}
+        {/*</Link>*/}
+        {/*  {size !== "small" && <div  className="navbar__links-middle">*/}
+        {/*  <div>How it works</div>*/}
+        {/*  <div>About Us</div>*/}
+        {/*  <div>Contact Us</div>*/}
+        {/*</div>}*/}
+        {/*<div className="navbar__links-right">*/}
+        {/*  {size !== "small" && !isAuthenticated && (*/}
+        {/*    <Link to="/register">Sign Up</Link>*/}
+        {/*  )}*/}
+        {/*  {size !== "small" && !isAuthenticated && (*/}
+        {/*    <Link to="/login">Login</Link>*/}
+        {/*  )}*/}
+        {/*  {size !== "small" && isAuthenticated && (*/}
+        {/*    <button className="navbar__button" onClick={handleLogout}>*/}
+        {/*      Logout*/}
+        {/*    </button>*/}
+        {/*  )}*/}
 
-            {/*<Link className="navbar__links-left" to="/">*/}
-            {/*  <div className="logo-image"></div>*/}
-            {/*  <div className="logo-title"></div>*/}
-            {/*</Link>*/}
-            {/*  {size !== "small" && <div  className="navbar__links-middle">*/}
-            {/*  <div>How it works</div>*/}
-            {/*  <div>About Us</div>*/}
-            {/*  <div>Contact Us</div>*/}
-            {/*</div>}*/}
-            {/*<div className="navbar__links-right">*/}
-            {/*  {size !== "small" && !isAuthenticated && (*/}
-            {/*    <Link to="/register">Sign Up</Link>*/}
-            {/*  )}*/}
-            {/*  {size !== "small" && !isAuthenticated && (*/}
-            {/*    <Link to="/login">Login</Link>*/}
-            {/*  )}*/}
-            {/*  {size !== "small" && isAuthenticated && (*/}
-            {/*    <button className="navbar__button" onClick={handleLogout}>*/}
-            {/*      Logout*/}
-            {/*    </button>*/}
-            {/*  )}*/}
+        {size !== "small" && (
+          <Navbar
+            size={size}
+            isMenuOpen={isMenuOpen}
+            handleLogout={handleLogout}
+            isAuthenticated={isAuthenticated}
+          />
+        )}
 
-            {size !== "small" && (
-              <Navbar
-                size={size}
-                isMenuOpen={isMenuOpen}
-                handleLogin={handleLogin}
-                handleRegister={handleRegister}
-                handleLogout={handleLogout}
-                isAuthenticated={isAuthenticated}
-                username={username}
-              />
-            )}
-
-            {size === "small" && (
-              <div className="navbar__hamburger" onClick={toggleMenu}>
-                <FontAwesomeIcon icon={faBars} />
-              <Link className="navbar__links-left" to="/">
+        {size === "small" && (
+          <div className="navbar__hamburger" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} />
+            <Link className="navbar__links-left" to="/">
               <div className="logo-image"></div>
               <div className="logo-title"></div>
-              </Link>
-              </div>
-            )}
+            </Link>
+          </div>
+        )}
 
-            {isMenuOpen && size === "small" && (
-              <Navbar
-                size={size}
-                isMenuOpen={isMenuOpen}
-                handleLogin={handleLogin}
-                handleRegister={handleRegister}
-                handleLogout={handleLogout}
-                isAuthenticated={isAuthenticated}
-                username={username}
-              />
-            )}
-            {/*</div>*/}
-
-        </div>
+        {isMenuOpen && size === "small" && (
+          <Navbar
+            size={size}
+            isMenuOpen={isMenuOpen}
+            handleLogout={handleLogout}
+            isAuthenticated={isAuthenticated}
+          />
+        )}
+        {/*</div>*/}
+      </div>
 
       <Routes>
         <Route path="/" element={<Welcome />} /> {/* Root path */}
