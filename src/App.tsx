@@ -122,26 +122,36 @@ const AppContent = ({
       <>
         <header>
           <div>
-            <nav className="navbar">
-                <span className="navbar__app-name"><Link to="/">Sentient</Link></span>
-              <div className="navbar__logo"><Link to="/">
-                  <EmotionCycler /></Link>
-              </div>
-              <div className="navbar__links">
-                {!isAuthenticated && <Link to="/register">Register</Link>}
-                {!isAuthenticated && <Link to="/login">Login</Link>}
-                {isAuthenticated && (
-                  <button className="navbar__button" onClick={handleLogout}>
-                    Logout
-                  </button>
-                )}
-              </div>
-            </nav>
+              <nav className="navbar">
+                  {/*  <span className="navbar__app-name"><Link to="/">Sentient</Link></span>*/}
+                  {/*<div className="navbar__logo"><Link to="/">*/}
+                  {/*    /!*<EmotionCycler /></Link>*!/*/}
+                  {/*</div>*/}
+
+                      <Link  className="navbar__links-left" to="/">
+                          <div className="logo-image"></div>
+                          <div className="logo-title"></div>
+                      </Link>
+                      <div className="navbar__links-middle">
+                          <div >How it works</div>
+                          <div>About Us</div>
+                          <div>Contact Us</div>
+                      </div>
+                  <div className="navbar__links-right">
+                      {!isAuthenticated && <Link to="/register">Sign Up</Link>}
+                      {!isAuthenticated && <Link to="/login">Login</Link>}
+                      {isAuthenticated && (
+                          <button className="navbar__button" onClick={handleLogout}>
+                              Logout
+                          </button>
+                      )}
+                  </div>
+                  </nav>
           </div>
         </header>
 
-        <Routes>
-          <Route path="/" element={<Welcome />} /> {/* Root path */}
+          <Routes>
+              <Route path="/" element={<Welcome/>}/> {/* Root path */}
           <Route
             path="/register"
             element={<Register onRegister={handleRegister} />}

@@ -36,7 +36,7 @@ const Welcome: React.FC = () => {
           <h1 className="welcome__title">
             Your personalised path to productivity
           </h1>
-          <h3 className="welcome__para">
+          <h3 className="welcome__para welcome__jumbotron">
             Your mood, your music, your motivation - powered by AI
           </h3>
           <div className="welcome__buttons">
@@ -52,7 +52,7 @@ const Welcome: React.FC = () => {
           {/*    Image hereeeeee */}
         </div>
       </div>
-      <div className="welcome__section welcome-section--2">
+      <div className="welcome__section welcome-section--2" id="section--2">
         <h3 className="welcome__title welcome-bold">How it works?</h3>
         <div className="welcome__bar"></div>
         <div className="welcome__cards">
