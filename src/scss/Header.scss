@@ -5,6 +5,7 @@
   flex-direction: row;
   margin: 2rem;
   font-family: var(--font-family-headers), serif;
+  color: var(--text-color);
 
   .small & {
     flex-direction: column;

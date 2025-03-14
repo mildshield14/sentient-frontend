@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../scss/LoginRegister.scss";
+import { Link } from "react-router-dom";
 
 function Login({
   onLogin,
@@ -47,33 +48,38 @@ function Login({
   }
 
   return (
-    <>
-      <form className="form" onSubmit={handleSubmit}>
-        <h1 className="form__title">Login Page</h1>
-        <input
-          className="form__elem form__elem__email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-        />
-        <input
-          className="form__elem form__elem__pwd"
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
-          required
-        />
-        <button className="form__elem form__elem__submit-button" type="submit">
-          Login
-        </button>
-        {errorMessage && <div className="form__error">{errorMessage}</div>}
-      </form>
-    </>
+      <>
+        <div className="form__logo-box">
+          <div className="form__logo logo-image"></div>
+          <div className="logo-title"></div>
+        </div>
+        <form className="form" onSubmit={handleSubmit}>
+          <h1 className="form__title">Welcome Back!</h1>
+          <input
+              className="form__elem form__elem__email"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+          />
+          <input
+              className="form__elem form__elem__pwd"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              required
+          />
+          {errorMessage && <div className="form__error">{errorMessage}</div>}
+          <button className="form__elem form__elem__submit-button" type="submit">
+            Log In
+          </button>
+          <div className="form__link-text" >Don't have an account? <span><Link className="form__link" to="/register">Sign Up</Link></span></div>
+        </form>
+      </>
   );
 }
 

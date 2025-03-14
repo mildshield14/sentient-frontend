@@ -151,14 +151,14 @@ const Welcome: React.FC = () => {
         </div>
         </div>
         <div className="welcome__right--4">
-          <div className="logo-image welcome__logo"></div>
+          <div className="logo-image welcome__logo--4"></div>
           <div className="logo-title welcome__title"></div>
         </div>
         </div>
       </div>
       <div className="welcome__section welcome__section--5">
         <div className="welcome__section--5-logo">
-          <div className="logo-image welcome__logo  logo-image"></div>
+          <div className="welcome__logo--5  logo-image"></div>
           <div className="logo-title welcome__title"></div>
         </div>
         <div className="welcome__section--5-logo">

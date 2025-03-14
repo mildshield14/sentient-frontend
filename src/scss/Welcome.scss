@@ -8,6 +8,7 @@
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-headers), sans-serif;
+  color: var(--text-color);
 
   &__title {
     font-size: 2.2rem;
@@ -125,9 +126,16 @@
   }
 
   &__logo {
-    height: 70px;
-    width: 100px;
-    margin-bottom: 1rem;
+    &--5{
+      height: 70px;
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    &--4{
+      height: 170px;
+      width: 200px;
+      margin-bottom: 1rem;
+    }
   }
   &__title {
     font-size: 1.5rem;
@@ -186,6 +194,7 @@
       .small & {
         align-items: flex-start;
         height: auto;
+        padding:1rem;
       }
     }
 

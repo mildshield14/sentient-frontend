@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../scss/LoginRegister.scss";
 import { useState } from "react";
 
@@ -44,38 +45,44 @@ function Register({
   }
   return (
     <>
+      <div className="form__logo-box">
+        <div className="form__logo logo-image"></div>
+        <div className="logo-title"></div>
+      </div>
       <form className="form" onSubmit={handleSubmit}>
-        <h1 className="form__title">Register page</h1>
+        <h1 className="form__title">Create an account</h1>
         <input
-          className="form__elem form__elem__username"
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Username"
-          required
+            className="form__elem form__elem__username"
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Username"
+            required
         />
         <input
-          className="form__elem form__elem__email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
+            className="form__elem form__elem__email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            required
         />
         <input
-          className="form__elem form__elem__pwd"
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
-          required
+            className="form__elem form__elem__pwd"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            required
         />
         <button className="form__elem form__elem__submit-button" type="submit">
-          Register
+          Get started
         </button>
+        <div className="form__link-text">Already have an account? <span><Link className="form__link" to="/login">Log In</Link></span>
+        </div>
       </form>
     </>
   );
