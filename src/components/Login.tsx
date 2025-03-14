@@ -23,7 +23,7 @@ function Login({
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/auth/login", {
+      const response = await fetch(`${process.env.VITE_DOMAIN}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
