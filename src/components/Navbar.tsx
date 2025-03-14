@@ -46,7 +46,7 @@ const Navbar = ({
                   Login
                 </Link>
               )}
-              {(size === "small" || isMenuOpen || isAuthenticated && (
+              {(size === "small" || isMenuOpen || isAuthenticated ) && (
                 <button className="navbar__link-button" onClick={handleLogout}>
                   Logout
                 </button>
