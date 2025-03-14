@@ -22,7 +22,7 @@ function Register({
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.VITE_DOMAIN}/auth/register`, {
+      const response = await fetch(`${import.meta.env.VITE_DOMAIN}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
