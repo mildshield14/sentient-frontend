@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";import  { useState } from "react";
 import SpotifyLogin from "./widgets/spotify/SpotifyLogin";
 import SpotifyPlayer from "./widgets/spotify/SpotifyPlayer";
 import YouTubePlayer from "./widgets/YoutubePlayer";

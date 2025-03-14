@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "../scss/Welcome.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const cardData = [
   {
@@ -149,10 +151,37 @@ const Welcome: React.FC = () => {
         </div>
         </div>
         <div className="welcome__right--4">
-          <div className="logo-image welcome__right--4__logo"></div>
-          <div className="logo-title"></div>
+          <div className="logo-image welcome__logo"></div>
+          <div className="logo-title welcome__title"></div>
         </div>
         </div>
+      </div>
+      <div className="welcome__section welcome__section--5">
+        <div className="welcome__section--5-logo">
+          <div className="logo-image welcome__logo  logo-image"></div>
+          <div className="logo-title welcome__title"></div>
+        </div>
+        <div className="welcome__section--5-logo">
+        </div>
+        <div className="welcome__section--5_box">
+          <div className="welcome__section--5_box-left">
+          </div>
+          <div className="welcome__section--5_box-middle">
+            <div className="welcome__section--5_box-middle-text">
+              Made by:
+            </div>
+            <div className="welcome__section--5_box-middle-linkedin">
+              <a href="https://www.linkedin.com/in/setayesh-abbasi-moghadam/"><FontAwesomeIcon icon={faLinkedin} />
+              Setayesh Abbasi Moghadam</a>
+              <a href="https://www.linkedin.com/in/vennilasooben/"><FontAwesomeIcon icon={faLinkedin} />
+                Vennila Sooben</a>
+            </div>
+
+          </div>
+          <div className="welcome__section--5_box-right">
+          </div>
+        </div>
+
       </div>
     </div>
   );
