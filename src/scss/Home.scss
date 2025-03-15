@@ -1,0 +1,30 @@
+@import url("App.scss");
+
+.home-page {
+
+  &__background-image{
+    width: 100%;
+    height: 100%;
+
+    &__container{
+display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &__description{
+      text-transform: capitalize;
+      font-family: var(--font-family-headers), serif;
+      position: absolute;
+      z-index: 20;
+      color: white;
+      bottom: 0;
+      padding-right: 0;
+      padding-bottom: 1rem;
+      width: 30%;
+      opacity: 60%;
+      right:0;
+    }
+  }
+
+}
