@@ -4,6 +4,7 @@ import SpotifyPlayer from "./widgets/spotify/SpotifyPlayer";
 import YouTubePlayer from "./widgets/YoutubePlayer";
 import axios from "axios";
 import "../scss/Home.scss";
+import { BeatLoader } from 'react-spinners';
 
 function HomePage({ username }: { username: string | null }) {
     const token = localStorage.getItem("spotifyAccessToken");
@@ -50,14 +51,14 @@ function HomePage({ username }: { username: string | null }) {
             </div>
 
             <div className="home-page__background-image__container">
-                {image ?  <img className="home-page__background-image" src={image.urls} alt={image.description}/>
-               : <p>Loading</p> }
+                {image ? <img className="home-page__background-image" src={image.urls} alt={image.description}/>
+                    :<BeatLoader/>}
                 <div className="home-page__weather">
                 </div>
                 <div className="home-page__quote">
                 </div>
                 {image ?   <div className="home-page__background-image__description"><p>{image.description}</p><p>By: {image.author} </p><p>From: {image.location}</p></div>
-            : <p>Loading</p>}
+            : <p></p>}
                 </div>
 
             {/*<div>*/}
