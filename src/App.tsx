@@ -34,29 +34,25 @@ function App() {
 
   const size = useElementSize(ref, breakpoints);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState<string | null>(null);
+  const [id, setId] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    const storedUsername = localStorage.getItem("username");
-    if (token && storedUsername) {
+    if (token) {
       setIsAuthenticated(true);
-      setUsername(storedUsername);
     }
   }, []);
 
-  const handleLogin = (token: string, username: string) => {
+  const handleLogin = (token: string,  id: string) => {
     localStorage.setItem("authToken", token);
-    localStorage.setItem("username", username);
     setIsAuthenticated(true);
-    setUsername(username);
+    setId(id);
   };
 
-  const handleRegister = (token: string, username: string) => {
+  const handleRegister = (token: string, id: string) => {
     localStorage.setItem("authToken", token);
-    localStorage.setItem("username", username);
     setIsAuthenticated(true);
-    setUsername(username);
+    setId(id);
   };
 
   return (
@@ -64,11 +60,11 @@ function App() {
       <div className={`${size} app`} ref={ref}>
         <AppContent
           isAuthenticated={isAuthenticated}
-          username={username}
+          id={id}
           handleLogin={handleLogin}
           handleRegister={handleRegister}
           setIsAuthenticated={setIsAuthenticated}
-          setUsername={setUsername}
+          setId={setId}
           size={size ? size : "small"}
         />
       </div>
@@ -78,19 +74,19 @@ function App() {
 
 const AppContent = ({
   isAuthenticated,
-  username,
+ id,
   handleLogin,
   handleRegister,
   setIsAuthenticated,
-  setUsername,
+  setId,
   size,
 }: {
   isAuthenticated: boolean;
-  username: string | null;
-  handleLogin: (token: string, username: string) => void;
-  handleRegister: (token: string, username: string) => void;
+  id: string | null;
+  handleLogin: (token: string,id: string) => void;
+  handleRegister: (token: string, id: string) => void;
   setIsAuthenticated: (isAuthenticated: boolean) => void;
-  setUsername: (username: string | null) => void;
+  setId: (id: string | null) => void;
   size: string;
 }) => {
   const navigate = useNavigate();
@@ -98,26 +94,22 @@ const AppContent = ({
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/home");
+      navigate(`/home`);
     }
   }, [isAuthenticated, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
-    localStorage.removeItem("username");
     setIsAuthenticated(false);
-    setUsername(null);
+    setId(null);
     navigate("/register");
   };
 
   useEffect(() => {
     const token =
-      localStorage.getItem("authToken") ||
-      localStorage.getItem("spotifyAccessToken");
-    const storedUsername = localStorage.getItem("username");
-    if (token && storedUsername) {
+      localStorage.getItem("authToken")
+    if (token ) {
       setIsAuthenticated(true);
-      setUsername(storedUsername);
     }
   }, []);
 
@@ -161,7 +153,7 @@ const AppContent = ({
         {/*    </button>*/}
         {/*  )}*/}
 
-        {size !== "small" && (
+        {!isAuthenticated && size !== "small"  && (
           <Navbar
             size={size}
             isMenuOpen={isMenuOpen}
@@ -170,7 +162,7 @@ const AppContent = ({
           />
         )}
 
-        {size === "small" && (
+        {size === "small" &&  !isAuthenticated && (
           <div className="navbar__hamburger" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faBars} />
             <Link className="navbar__links-left" to="/">
@@ -202,7 +194,7 @@ const AppContent = ({
           path="/home"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <HomePage username={username} />
+              <HomePage id={id}  handleLogout={handleLogout} size={size}/>
             </ProtectedRoute>
           }
         />

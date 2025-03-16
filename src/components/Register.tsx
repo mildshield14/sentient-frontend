@@ -5,7 +5,7 @@ import { useState } from "react";
 function Register({
   onRegister,
 }: {
-  onRegister: (token: string, username: string) => void;
+  onRegister: (token: string, id: string) => void;
 }) {
   const [formData, setFormData] = useState({
     username: "",
@@ -30,8 +30,8 @@ function Register({
       });
       const data = await response.json();
 
-      if (data.user && data.user.authentication && data.user.username) {
-        onRegister(data.user.authentication.token, data.user.username);
+      if (data.user && data.user.authentication && data.user._id) {
+        onRegister(data.user.authentication.token, data.user._id);
         setIsAuthenticated(true);
       } else {
         console.error("Invalid response:", data);

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Login({
   onLogin,
 }: {
-  onLogin: (token: string, username: string) => void;
+  onLogin: (token: string, id:string) => void;
 }) {
   const [formData, setFormData] = useState({
     email: "",
@@ -30,8 +30,8 @@ function Login({
         credentials: "include"
       });
       const data = await response.json();
-      if (data.user && data.user.authentication && data.user.username) {
-        onLogin(data.user.authentication.token, data.user.username);
+      if (data.user && data.user.authentication  && data.user._id) {
+        onLogin(data.user.authentication.token, data.user._id);
         setIsAuthenticated(true);
         setErrorMessage(null);
       } else {

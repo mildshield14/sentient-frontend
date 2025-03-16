@@ -1,20 +1,133 @@
 @import url("App.scss");
 
 .home-page {
+  display: flex;
+  flex-direction: row;
+  font-family: var(--font-family-headers), serif;
 
-  &__background-image{
+  &__left-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: var(--left-navbar-color);
+    align-items: center;
 
+    &--activated{
+      width: 18%;
+    }
+
+    .small & {
+      width: 10%;
+    }
+
+    &--not-activated{
+      width: 5%;
+    }
+
+    &__1 {
+      padding: 1rem;
+      width: 100%;
+      &-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    }
+    &__2{
+      padding:0.5rem;
+      width: 100%;
+
+      &-todo{
+        display: flex;
+        flex-direction: row;
+       gap: 0.5rem;
+        justify-content: center;
+        padding:1.0rem 0rem;
+        width: 100%;
+        &:hover{
+          background-color: var(--hover-grey-color);
+        }
+      }
+      &-music{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        padding:1.0rem 0rem;
+        width: 100%;
+        &:hover{
+          background-color: var(--hover-grey-color);
+        }
+      }
+      &-settings{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        padding:1.0rem 0rem;
+        width: 100%;
+        &:hover{
+          background-color: var(--hover-grey-color);
+        }
+      }
+      &-profile{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        padding:1.0rem 0rem;
+        align-items: center;
+        width: 100%;
+
+        .small & {
+          flex-direction: column;
+        }
+        &:hover{
+          background-color: var(--hover-grey-color);
+        }
+        &__img{
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+
+          .small & {
+            width: 30px;
+            height: 30px;
+            padding-bottom: 0.6rem;
+          }
+        }
+        &__username{
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  &__background-image {
     width: 100%;
     height: 100vh;
-    &__container{
-display: flex;
+    &__container {
+      width: 82%;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
+
+      .small & {
+        width: 90%;
+      }
+
+      &--activated{
+        width: 82%;
+      }
+      &--not-activated{
+        width: 95%;
+      }
     }
 
-    &__description{
+    &__description {
       text-transform: capitalize;
       font-family: var(--font-family-headers), serif;
       position: absolute;
@@ -25,8 +138,7 @@ display: flex;
       padding-bottom: 1rem;
       //width: 30%;
       opacity: 40%;
-      right:0;
+      right: 0;
     }
   }
-
 }
