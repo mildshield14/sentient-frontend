@@ -52,15 +52,18 @@ font-size: 10rem;
   }
 
   &__left-bar{
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background-color: var(--left-navbar-color);
+    background-color: rgba(var(--left-navbar-color-rgb), 0.5);
     align-items: center;
+    z-index: 10;
 
     &--activated{
       width: 18%;
+      background-color: rgba(var(--left-navbar-color-rgb), 0.7);
     }
 
     .small & {
@@ -160,17 +163,19 @@ font-size: 10rem;
       align-items: center;
       justify-content: center;
       position: relative;
+      width: 100%;
 
-      .small & {
-        width: 90%;
-      }
 
-      &--activated{
-        width: 82%;
-      }
-      &--not-activated{
-        width: 95%;
-      }
+      //.small & {
+      //  width: 90%;
+      //}
+      //
+      //&--activated{
+      //  width: 82%;
+      //}
+      //&--not-activated{
+      //  width: 95%;
+      //}
     }
 
     &__description {
