@@ -1,5 +1,6 @@
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
+import DateTime from "../components/DateTime";
 import SpotifyLogin from "./widgets/spotify/SpotifyLogin";
 import SpotifyPlayer from "./widgets/spotify/SpotifyPlayer";
 import YouTubePlayer from "./widgets/YoutubePlayer";
@@ -50,8 +51,26 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
       };
       fetchData();
   }, []);
-  
-    useEffect(() => {
+
+  useEffect(() => {
+    if (!id){
+      id = localStorage.getItem("userId");
+    }
+    if (id) {
+      axios.get(`${import.meta.env.VITE_DOMAIN}/user/${id}`)
+          .then(response => {
+            setProfilePhoto(response.data.photo);
+            setUsername(response.data.username);
+          })
+          .catch(error => {
+            setProfilePhoto("../../images/logo-default.png");
+            setUsername("User Unknown");
+          });
+    }
+  }, [id]);
+
+
+  useEffect(() => {
       const fetchData = async () => {
       try {
         const quoteResponse = await axios.get(`${import.meta.env.VITE_DOMAIN}/quote`);
@@ -132,31 +151,41 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
         </div>
       </div>
       <div
-        className={`home-page__background-image__container ${
-          isMenuOpen
-            ? "home-page__background-image__container--activated"
-            : "home-page__background-image__container--not-activated"
-        }`}
+          className={`home-page__background-image__container ${
+              isMenuOpen
+                  ? "home-page__background-image__container--activated"
+                  : "home-page__background-image__container--not-activated"
+          }`}
       >
         {image ? (
-          <img
-            className="home-page__background-image"
-            src={image.urls}
-            alt={image.description}
-          />
+            <img
+                className="home-page__background-image"
+                src={image.urls}
+                alt={image.description}
+            />
         ) : (
-          <BeatLoader />
+            <BeatLoader/>
         )}
         <div className="home-page__weather"></div>
-        <div className="home-page__quote"></div>
+        <DateTime />
+        <div className="home-page__quote">
+          {quote ? (
+              <>
+                <p>"{quote.content}"</p>
+                <p>{quote.author}</p>
+              </>
+          ) : (
+              "No quote available"
+          )}
+        </div>
         {image ? (
-          <div className="home-page__background-image__description">
-            <p>{image.description}</p>
-            <p>By: {image.author} </p>
-            <p>From: {image.location}</p>
-          </div>
+            <div className="home-page__background-image__description">
+              <p>{image.description}</p>
+              <p>By: {image.author} </p>
+              <p>From: {image.location}</p>
+            </div>
         ) : (
-          <p></p>
+            <p></p>
         )}
       </div>
 

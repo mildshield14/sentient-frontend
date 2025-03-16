@@ -38,19 +38,23 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    if (token) {
+    const storedId = localStorage.getItem("userId");
+    if (token && storedId) {
       setIsAuthenticated(true);
+      setId(storedId);
     }
   }, []);
 
   const handleLogin = (token: string,  id: string) => {
     localStorage.setItem("authToken", token);
+    localStorage.setItem("userId", id);
     setIsAuthenticated(true);
     setId(id);
   };
 
   const handleRegister = (token: string, id: string) => {
     localStorage.setItem("authToken", token);
+    localStorage.setItem("userId", id);
     setIsAuthenticated(true);
     setId(id);
   };
@@ -100,6 +104,7 @@ const AppContent = ({
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("userId");
     setIsAuthenticated(false);
     setId(null);
     navigate("/register");
