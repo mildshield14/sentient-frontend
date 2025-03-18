@@ -6,7 +6,17 @@
   font-family: var(--font-family-headers), serif;
   position: relative;
 
-  &__quote{
+  &__weather {
+    position: absolute;
+    top: 3%;
+    right: 0;
+    padding: 1rem;
+    z-index: 10;
+    //width: 20rem;
+    //height: 20rem;
+  }
+
+  &__quote {
     position: absolute;
     font-size: 1.5rem;
     bottom: 2rem;
@@ -16,15 +26,16 @@
     flex-direction: column;
     align-items: center;
     width: 70%;
+    top: 70%;
     padding: 2rem;
     gap: 0.5rem;
 
     .small & {
-      font-size: 1.0rem;
+      font-size: 1rem;
     }
   }
 
-  &__timer{
+  &__timer {
     position: absolute;
     color: var(--white-color);
     opacity: 80%;
@@ -33,15 +44,16 @@
     align-items: center;
     width: 70%;
     padding: 2rem;
+    top: 20%;
 
-    &__time{
-font-size: 10rem;
+    &__time {
+      font-size: 10rem;
 
       .small & {
         font-size: 5rem;
       }
     }
-    &__date{
+    &__date {
       margin-top: 1.5rem;
       font-size: 2rem;
 
@@ -51,7 +63,7 @@ font-size: 10rem;
     }
   }
 
-  &__left-bar{
+  &__left-bar {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -61,7 +73,7 @@ font-size: 10rem;
     align-items: center;
     z-index: 10;
 
-    &--activated{
+    &--activated {
       width: 18%;
       background-color: rgba(var(--left-navbar-color-rgb), 0.7);
     }
@@ -70,7 +82,7 @@ font-size: 10rem;
       width: 10%;
     }
 
-    &--not-activated{
+    &--not-activated {
       width: 5%;
     }
 
@@ -82,61 +94,61 @@ font-size: 10rem;
         flex-direction: row;
         justify-content: center;
         gap: 1rem;
+      }
     }
-    }
-    &__2{
-      padding:0.5rem;
+    &__2 {
+      padding: 0.5rem;
       width: 100%;
 
-      &-todo{
-        display: flex;
-        flex-direction: row;
-       gap: 0.5rem;
-        justify-content: center;
-        padding:1.0rem 0rem;
-        width: 100%;
-        &:hover{
-          background-color: var(--hover-grey-color);
-        }
-      }
-      &-music{
+      &-todo {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         justify-content: center;
-        padding:1.0rem 0rem;
+        padding: 1rem 0rem;
         width: 100%;
-        &:hover{
+        &:hover {
           background-color: var(--hover-grey-color);
         }
       }
-      &-settings{
+      &-music {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         justify-content: center;
-        padding:1.0rem 0rem;
+        padding: 1rem 0rem;
         width: 100%;
-        &:hover{
+        &:hover {
           background-color: var(--hover-grey-color);
         }
       }
-      &-profile{
+      &-settings {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         justify-content: center;
-        padding:1.0rem 0rem;
+        padding: 1rem 0rem;
+        width: 100%;
+        &:hover {
+          background-color: var(--hover-grey-color);
+        }
+      }
+      &-profile {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 1rem 0rem;
         align-items: center;
         width: 100%;
 
         .small & {
           flex-direction: column;
         }
-        &:hover{
+        &:hover {
           background-color: var(--hover-grey-color);
         }
-        &__img{
+        &__img {
           width: 40px;
           height: 40px;
           border-radius: 50px;
@@ -147,7 +159,7 @@ font-size: 10rem;
             padding-bottom: 0.6rem;
           }
         }
-        &__username{
+        &__username {
           margin-right: 1rem;
         }
       }
@@ -164,7 +176,6 @@ font-size: 10rem;
       justify-content: center;
       position: relative;
       width: 100%;
-
 
       //.small & {
       //  width: 90%;
@@ -187,9 +198,12 @@ font-size: 10rem;
       bottom: 0;
       padding-right: 1rem;
       padding-bottom: 1rem;
-      //width: 30%;
+      width: 40%;
       opacity: 40%;
       right: 0;
+      top: 90%;
+      align-self: center;
+      justify-items: flex-end;
     }
   }
 }

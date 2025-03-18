@@ -1,6 +1,7 @@
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
 import DateTime from "../components/DateTime";
+import Weather from "../components/Weather";
 import SpotifyLogin from "./widgets/spotify/SpotifyLogin";
 import SpotifyPlayer from "./widgets/spotify/SpotifyPlayer";
 import YouTubePlayer from "./widgets/YoutubePlayer";
@@ -16,7 +17,15 @@ import {
   faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout: () => void, size: string }) {
+function HomePage({
+  id,
+  handleLogout,
+  size,
+}: {
+  id: string | null;
+  handleLogout: () => void;
+  size: string;
+}) {
   const token = localStorage.getItem("spotifyAccessToken");
   const [playerType, setPlayerType] = useState<"spotify" | "youtube">(
     "spotify"
@@ -38,7 +47,9 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const imageResponse = await axios.get(`${import.meta.env.VITE_DOMAIN}/image`);
+        const imageResponse = await axios.get(
+          `${import.meta.env.VITE_DOMAIN}/image`
+        );
         console.log("Image Data:", imageResponse.data[0]);
         setImage(imageResponse.data[0]);
       } catch (error) {
@@ -48,32 +59,34 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
         });
         console.error("Error fetching image data:", error);
       }
-      };
-      fetchData();
+    };
+    fetchData();
   }, []);
 
   useEffect(() => {
-    if (!id){
+    if (!id) {
       id = localStorage.getItem("userId");
     }
     if (id) {
-      axios.get(`${import.meta.env.VITE_DOMAIN}/user/${id}`)
-          .then(response => {
-            setProfilePhoto(response.data.photo);
-            setUsername(response.data.username);
-          })
-          .catch(error => {
-            setProfilePhoto("../../images/logo-default.png");
-            setUsername("User Unknown");
-          });
+      axios
+        .get(`${import.meta.env.VITE_DOMAIN}/user/${id}`)
+        .then((response) => {
+          setProfilePhoto(response.data.photo);
+          setUsername(response.data.username);
+        })
+        .catch((error) => {
+          setProfilePhoto("../../images/logo-default.png");
+          setUsername("User Unknown");
+        });
     }
   }, [id]);
 
-
   useEffect(() => {
-      const fetchData = async () => {
+    const fetchData = async () => {
       try {
-        const quoteResponse = await axios.get(`${import.meta.env.VITE_DOMAIN}/quote`);
+        const quoteResponse = await axios.get(
+          `${import.meta.env.VITE_DOMAIN}/quote`
+        );
         console.log("Quote Data:", quoteResponse.data);
         setQuote(quoteResponse.data);
       } catch (error) {
@@ -81,7 +94,9 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
       }
 
       try {
-        const profilePhotoResponse = await axios.get(`${import.meta.env.VITE_DOMAIN}/user/${id}`);
+        const profilePhotoResponse = await axios.get(
+          `${import.meta.env.VITE_DOMAIN}/user/${id}`
+        );
         console.log("Profile Photo Data:", profilePhotoResponse.data);
         setProfilePhoto(profilePhotoResponse.data.photo);
         setUsername(profilePhotoResponse.data.username);
@@ -92,8 +107,8 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
       }
     };
 
-        fetchData();
-    }, [id]);
+    fetchData();
+  }, [id]);
 
   return (
     <div className="home-page">
@@ -112,80 +127,92 @@ function HomePage({ id, handleLogout, size }: { id: string | null, handleLogout:
             <div>
               <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
             </div>
-            {isMenuOpen  && size!="small"  && <div className="logo-title"></div>}
+            {isMenuOpen && size != "small" && (
+              <div className="logo-title"></div>
+            )}
           </div>
-
         </div>
         <div className="home-page__left-bar__2">
           <div className="home-page__left-bar__2-todo">
             <div>
               <FontAwesomeIcon icon={faListCheck} />
             </div>
-            {isMenuOpen  && size!="small" && <div>To Do</div>}
+            {isMenuOpen && size != "small" && <div>To Do</div>}
           </div>
           <div className="home-page__left-bar__2-music">
             <div>
               <FontAwesomeIcon icon={faMusic} />
             </div>
-            {isMenuOpen  && size!="small" && <div>Music</div>}
+            {isMenuOpen && size != "small" && <div>Music</div>}
           </div>
           <div className="home-page__left-bar__2-settings">
             <div>
               <FontAwesomeIcon icon={faGear} />
             </div>
-            {isMenuOpen && size!="small" && <div>Settings</div>}
+            {isMenuOpen && size != "small" && <div>Settings</div>}
           </div>
           <div className="home-page__left-bar__2-profile">
-              {isMenuOpen && (
-                  <div>
-                    <img  className="home-page__left-bar__2-profile__img" src={profilePhoto} alt="profile picture"/>
-                  </div>
-              )}
-            {isMenuOpen  && size!="small" && (
-                <div className="home-page__left-bar__2-profile__username">{username}</div>
+            {isMenuOpen && (
+              <div>
+                <img
+                  className="home-page__left-bar__2-profile__img"
+                  src={profilePhoto}
+                  alt="profile picture"
+                />
+              </div>
+            )}
+            {isMenuOpen && size != "small" && (
+              <div className="home-page__left-bar__2-profile__username">
+                {username}
+              </div>
             )}
             <div>
-              <FontAwesomeIcon onClick={handleLogout} icon={faArrowRightFromBracket} />
+              <FontAwesomeIcon
+                onClick={handleLogout}
+                icon={faArrowRightFromBracket}
+              />
             </div>
           </div>
         </div>
       </div>
       <div
-          className={`home-page__background-image__container ${
-              isMenuOpen
-                  ? "home-page__background-image__container--activated"
-                  : "home-page__background-image__container--not-activated"
-          }`}
+        className={`home-page__background-image__container ${
+          isMenuOpen
+            ? "home-page__background-image__container--activated"
+            : "home-page__background-image__container--not-activated"
+        }`}
       >
         {image ? (
-            <img
-                className="home-page__background-image"
-                src={image.urls}
-                alt={image.description}
-            />
+          <img
+            className="home-page__background-image"
+            src={image.urls}
+            alt={image.description}
+          />
         ) : (
-            <BeatLoader/>
+          <BeatLoader />
         )}
-        <div className="home-page__weather"></div>
+        <div className="home-page__weather">
+          <Weather />
+        </div>
         <DateTime />
         <div className="home-page__quote">
           {quote ? (
-              <>
-                <p>"{quote.content}"</p>
-                <p>{quote.author}</p>
-              </>
+            <>
+              <p>"{quote.content}"</p>
+              <p>{quote.author}</p>
+            </>
           ) : (
-              "No quote available"
+            "No quote available"
           )}
         </div>
         {image ? (
-            <div className="home-page__background-image__description">
-              <p>{image.description}</p>
-              <p>By: {image.author} </p>
-              <p>From: {image.location}</p>
-            </div>
+          <div className="home-page__background-image__description">
+            <p>{image.description}</p>
+            <p>By: {image.author} </p>
+            <p>From: {image.location}</p>
+          </div>
         ) : (
-            <p></p>
+          <p></p>
         )}
       </div>
 

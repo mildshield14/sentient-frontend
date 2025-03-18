@@ -126,12 +126,12 @@
   }
 
   &__logo {
-    &--5{
+    &--5 {
       height: 70px;
       width: 100px;
       margin-bottom: 1rem;
     }
-    &--4{
+    &--4 {
       height: 170px;
       width: 200px;
       margin-bottom: 1rem;
@@ -194,7 +194,7 @@
       .small & {
         align-items: flex-start;
         height: auto;
-        padding:1rem;
+        padding: 1rem;
       }
     }
 
@@ -282,7 +282,7 @@
             margin-top: 1rem;
           }
 
-          &-text{
+          &-text {
             margin-bottom: 1rem;
           }
 
@@ -291,22 +291,22 @@
             gap: 0.8rem;
             align-items: flex-end;
 
-            & a:hover  {
+            & a:hover {
               color: var(--white-color);
               text-decoration: none;
             }
 
-            & a:visited  {
+            & a:visited {
               color: var(--white-color);
               text-decoration: none;
             }
 
-            & a:link  {
+            & a:link {
               color: var(--white-color);
               text-decoration: none;
             }
 
-            & a:active  {
+            & a:active {
               color: var(--white-color);
               text-decoration: none;
             }

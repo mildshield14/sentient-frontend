@@ -1,0 +1,91 @@
+@import url("App.scss");
+
+.weather {
+  color: var(--weather-color);
+  &__basic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &__detailed {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    &__combined {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+
+      &-right {
+      }
+
+      &-left {
+      }
+    }
+
+    &__bar {
+      width: 100%;
+      height: 3px;
+      background-color: var(--weather-color);
+      margin: 1rem 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__hourly {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  &__city {
+    padding-bottom: 0.7rem;
+  }
+
+  &__current {
+    &__feelslike {
+      padding-top: 0.7rem;
+    }
+
+    &__combined {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+  &__icon {
+    &-0 {
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.7744 5.05082V1M26.0816 8.02295L23.0045 5.1541M41.4672 22.3787L44.5443 25.2361M44.6551 15.1951H49M41.4672 8.02295L44.5443 5.1541M28.8486 9.76721C30.2345 8.67293 31.9936 8.07536 33.8098 8.08188C35.6259 8.0884 37.38 8.69858 38.7569 9.80279C40.1341 10.907 41.0437 12.4331 41.3221 14.1066C41.6005 15.7801 41.2295 17.4913 40.2758 18.9326M20.6044 10.8459C26.0939 10.5705 31.8051 13.5197 33.7006 20.2672C35.8147 20.4283 37.787 21.3232 39.2273 22.775C40.6677 24.2268 41.4712 26.1297 41.4789 28.1073C41.4867 30.0849 40.6981 31.9931 39.2691 33.4547C37.8402 34.9162 35.8749 35.8245 33.7621 36H10.0929C-1.24316 34.5656 -2.79403 19.177 10.0929 17.1115C11.1014 15.2991 12.6036 13.7661 14.4487 12.6663C16.2937 11.5665 18.4167 10.9387 20.6044 10.8459Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+    }
+    &-3 {
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.7744 5.05082V1M26.0816 8.02295L23.0045 5.1541M41.4672 22.3787L44.5443 25.2361M44.6551 15.1951H49M41.4672 8.02295L44.5443 5.1541M28.8486 9.76721C30.2345 8.67293 31.9936 8.07536 33.8098 8.08188C35.6259 8.0884 37.38 8.69858 38.7569 9.80279C40.1341 10.907 41.0437 12.4331 41.3221 14.1066C41.6005 15.7801 41.2295 17.4913 40.2758 18.9326M20.6044 10.8459C26.0939 10.5705 31.8051 13.5197 33.7006 20.2672C35.8147 20.4283 37.787 21.3232 39.2273 22.775C40.6677 24.2268 41.4712 26.1297 41.4789 28.1073C41.4867 30.0849 40.6981 31.9931 39.2691 33.4547C37.8402 34.9162 35.8749 35.8245 33.7621 36H10.0929C-1.24316 34.5656 -2.79403 19.177 10.0929 17.1115C11.1014 15.2991 12.6036 13.7661 14.4487 12.6663C16.2937 11.5665 18.4167 10.9387 20.6044 10.8459Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+    }
+  }
+}

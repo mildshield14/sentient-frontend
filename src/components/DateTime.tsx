@@ -17,7 +17,7 @@ export const DateTime = () => {
 
   return(
       <div className="home-page__timer">
-        <p className="home-page__timer__time"> {date.toLocaleTimeString()}</p>
+        <p className="home-page__timer__time"> {date.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})}</p>
         <p className="home-page__timer__date">{date.toLocaleDateString()}</p>
       </div>
   )
