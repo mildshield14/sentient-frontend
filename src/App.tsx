@@ -27,8 +27,8 @@ function App() {
   // Define breakpoints
   const breakpoints = {
     small: { min: 300, max: 599 },
-    medium: { min: 600, max: 899 },
-    large: { min: 900, max: 1399 },
+    medium: { min: 600, max: 994 },
+    large: { min: 995, max: 1399 },
     extra: { min: 1400, max: Infinity },
   };
 
@@ -43,6 +43,16 @@ function App() {
       setIsAuthenticated(true);
       setId(storedId);
     }
+  }, []);
+
+  useEffect(() => {
+    const script1 = document.createElement('script');
+    script1.src = 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs';
+    document.body.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.src = 'https://cdn.jsdelivr.net/npm/@teachablemachine/image';
+    document.body.appendChild(script2);
   }, []);
 
   const handleLogin = (token: string,  id: string) => {
@@ -105,6 +115,8 @@ const AppContent = ({
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userId");
+    localStorage.removeItem("spotifyAccessToken");
+    localStorage.removeItem("spotifyUserId");
     setIsAuthenticated(false);
     setId(null);
     navigate("/register");

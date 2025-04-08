@@ -1,53 +1,91 @@
 .spotify-player-container {
-  border: 1px solid var(--border-color-form);
-  margin: 40px;
+  //border: 1px solid var(--border-color-form);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 110;
+  justify-content: center;
 
   .medium & {
-    width: 25rem;
+    width: min-content;
+    max-height: 500px;
+    overflow-y: auto;
   }
-
+  .small & {
+    width: min-content;
+    max-height: 500px;
+    overflow-y: auto;
+  }
   .large & {
-    width: 25rem;
+    //width: 25rem;
   }
 
   &__title {
     font-family: var(--font-family-headers), sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 800;
     padding: 8px;
   }
 
   &__playlist {
-    padding: 12px;
     align-items: center;
+    display: flex
+  ;
+    flex-direction: column;
     &-title {
       font-family: var(--font-family-headers), sans-serif;
-      font-size: 1.2rem;
-      padding-bottom: 10px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+
     }
 
     &__list {
-      display: flex;
-      flex-direction: row;
-      scroll-direction: horizontal;
-      width: 85%;
-      overflow-x: auto;
+      display: grid;
+      grid-template-columns: repeat(2, min-content);
+      gap: 1.6rem;
       align-items: center;
+      justify-items: center;
+      padding-right: 1rem;
+
+      .large & {
+        max-height: 500px;
+        overflow-y: auto;
+        padding-right: 1rem;
+      }
+
+      .extra & {
+        max-height: 500px;
+        overflow-y: auto;
+        padding-right: 1rem;
+      }
+
       &-items {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
         font-family: var(--font-family-headers), sans-serif;
         height: max-content;
         text-align: center;
+        width: fit-content;
         &__name {
           font-size: 1.2rem;
           padding: 10px;
           height: 40px;
         }
         &__image {
-          width: 180px;
-          height: 180px;
+          width: 150px;
+          height: 150px;
+
+          .extra & {
+            width: 190px;
+            height: 190px;
+          }
+
+          .small &{
+            width: 100px;
+            height: 100px;
+          }
         }
       }
 
@@ -61,16 +99,49 @@
     }
   }
 
+  &__volume {
+    align-items: center;
+    display: flex
+  ;
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+flex-direction: row;
+    &__input {
+      width: 80%;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    &__input {
+      width: 80%;
+    }
+  }
+
   &__current-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    justify-content: center;
     &__title {
-      font-family: var(--font-family-headers), sans-serif;
       font-size: 1.2rem;
-      padding: 10px;
+      font-weight: 600;
     }
     &__name {
       font-family: var(--font-family-headers), sans-serif;
       font-size: 1.1rem;
       padding: 10px;
+      font-weight: 600;
+      max-width: 28rem;
     }
     &__img {
       width: 100px;
@@ -91,7 +162,11 @@
     }
     &-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+
+      .small & {
+        width: 80%;
+      }
     }
 
     &-right {
@@ -114,9 +189,35 @@
     &__button {
       border: 2px solid var(--border-color-form);
       border-radius: 1000px;
-      width: 80px;
-      padding: 8px;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
       content: " ";
+      display: flex
+    ;
+      align-items: center;
+      justify-content: center;
+    }
+    &__play{
+      background-color: var(--play-color);
+      color: var(--white-color);
+      border-radius:1000px;
+      border: 1px var(--play-color) solid;
+      width: 2.6rem;
+      height:2.6rem;
     }
   }
+
 }
+
+.icon-color {
+  &__1{
+    color: var(--text-color);
+  }
+  &__2{
+    color: var(--play-color);
+  }
+}
+
+input[type='range']{ accent-color: var(--play-color); }

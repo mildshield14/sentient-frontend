@@ -26,10 +26,10 @@ function Weather() {
 
           try {
             const weatherResponse = await axios.get(
-              `${import.meta.env.VITE_DOMAIN}/weather`,
-              {
-                params: { lat, lon },
-              }
+                `${import.meta.env.VITE_DOMAIN}/weather`,
+                {
+                  params: { lat, lon },
+                }
             );
             console.log("Weather Data:", weatherResponse.data);
             setWeather(weatherResponse.data);
@@ -38,6 +38,21 @@ function Weather() {
           }
         });
       } else {
+        const lat = 43.6;
+        const lon = -73.9;
+
+        try {
+          const weatherResponse = await axios.get(
+              `${import.meta.env.VITE_DOMAIN}/weather`,
+              {
+                params: { lat, lon },
+              }
+          );
+          console.log("Weather Data:", weatherResponse.data);
+          setWeather(weatherResponse.data);
+        } catch (error) {
+          console.error("Error fetching weather data:", error);
+        }
         console.error("Geolocation is not supported by this browser.");
       }
     };
